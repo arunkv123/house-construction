@@ -25,6 +25,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/user/tsconfig.app.json"
       }
+    },
+    "construction-stage": {
+      "type": "application",
+      "root": "apps/construction-stage",
+      "entryFile": "main",
+      "sourceRoot": "apps/construction-stage/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/construction-stage/tsconfig.app.json"
+      }
     }
   }
 }
