@@ -8,6 +8,8 @@ RUN npm install glob rimraf
 
 RUN npm install --only=development
 
+RUN npm install --save-dev webpack
+
 COPY . .
 
 RUN npm run build
