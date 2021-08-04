@@ -34,6 +34,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/construction-stage/tsconfig.app.json"
       }
+    },
+    "construction-estimate": {
+      "type": "application",
+      "root": "apps/construction-estimate",
+      "entryFile": "main",
+      "sourceRoot": "apps/construction-estimate/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/construction-estimate/tsconfig.app.json"
+      }
     }
   }
 }
