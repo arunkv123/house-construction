@@ -1,0 +1,48 @@
+
+version: '3.4'
+
+services:
+    gateway:
+        container_name: gateway_api_dev
+        image: gateway-api-dev:1.0.0
+        build:
+            context: .
+            target: development
+            dockerfile: ./apps/gateway/Dockerfile
+        command: npm run start:dev gateway
+        ports:
+            - 3000:3000
+            - 9229:9229
+        networks:
+            - nesjs-network
+        restart: always
+    house-construction:
+        container_name: house-construction_api_dev
+        image: house-construction-api-dev:1.0.0
+        build:
+            context: .
+            target: development
+            dockerfile: ./apps/house-construction/Dockerfile
+        command: npm run start:dev
+        ports:
+            - 3001:3001
+            - 9230:9230
+        networks:
+            - nesjs-network
+        restart: always
+    user:
+        container_name: user_api_dev
+        image: user-api-dev:1.0.0
+        build:
+            context: .
+            target: development
+            dockerfile: ./apps/user/Dockerfile
+        command: npm run start:dev user
+        ports:
+            - 3002:3002
+            - 9231:9231
+        networks:
+            - nesjs-network
+        restart: always
+networks:
+    nesjs-network:
