@@ -2,6 +2,12 @@
 version: '3.4'
 
 services:
+    sonarqube:
+        container_name:  sonarqube
+        image:  sonarqube:latest
+        ports:
+            -  "9000:9000"
+            -  "9092:9092"
     gateway:
         container_name: gateway_api_dev
         image: gateway-api-dev:1.0.0
