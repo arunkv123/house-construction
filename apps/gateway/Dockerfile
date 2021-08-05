@@ -11,7 +11,7 @@ RUN npm install --only=development
 RUN npm install --save-dev webpack
 COPY . .
 
-RUN npm run build
+RUN npm run build gateway
 
 FROM node:14.17-alpine3.12 as production
 

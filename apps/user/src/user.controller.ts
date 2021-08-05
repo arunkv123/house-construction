@@ -8,13 +8,8 @@ export class UserController {
   constructor(private readonly userService: UserService) { }
 
   @MessagePattern('test-message-pattern')
-  public async testMessagePattern() {
-    console.log('user app');
-    return 'user message pattern test success';
+  public async testMessagePattern(name: string) {
+    return name +' is testing message pattern!!!';
   }
 
-  @Get()
-  public hello(){
-    return 'hello world';
-  }
 }

@@ -12,7 +12,7 @@ RUN npm install --save-dev webpack
 
 COPY . .
 
-RUN npm run build
+RUN npm run build house-construction
 
 FROM node:14.17-alpine3.12 as production
 
