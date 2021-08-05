@@ -23,7 +23,7 @@ services:
             context: .
             target: development
             dockerfile: ./apps/house-construction/Dockerfile
-        command: npm run start:dev
+        command: npm run start:dev house-construction
         ports:
             - 3001:3001
             - 9230:9230

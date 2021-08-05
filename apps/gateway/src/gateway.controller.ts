@@ -1,12 +1,17 @@
-import { Controller, Get } from '@nestjs/common';
-import { GatewayService } from './gateway.service';
+import {
+  Controller, Get,
+  Inject,
+} from '@nestjs/common';
+import { ClientProxy } from '@nestjs/microservices';
 
 @Controller()
 export class GatewayController {
-  constructor(private readonly gatewayService: GatewayService) {}
+  constructor(@Inject('USER_SERVICE') private userServiceClient: ClientProxy) { }
 
   @Get()
-  getHello(): string {
-    return this.gatewayService.getHello();
+  public async getHello(): Promise<any> {
+    console.log('gateway');
+    return this.userServiceClient
+      .send('test-message-pattern', '');
   }
 }
