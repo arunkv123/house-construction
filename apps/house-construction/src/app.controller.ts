@@ -6,8 +6,8 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) { }
 
-  @EventPattern({cmd:'queue-message-pattern'})
-  public testMessagePattern(@Payload() name: string, @Ctx() context: RmqContext) {
-    return name + ' is testing message pattern!!!';
+  @EventPattern({ cmd: 'queue-micro-service' })
+  public getQueueService(@Payload() name: string, @Ctx() context: RmqContext) {
+    return name + ' is Queue Micro service!!!';
   }
 }

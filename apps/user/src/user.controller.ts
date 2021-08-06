@@ -7,9 +7,9 @@ import { MessagePattern } from '@nestjs/microservices';
 export class UserController {
   constructor(private readonly userService: UserService) { }
 
-  @MessagePattern('test-message-pattern')
-  public async testMessagePattern(name: string) {
-    return name +' is testing message pattern!!!';
+  @MessagePattern('rest-micro-service')
+  public async getRestMicroService(name: string) {
+    return name +' is testing Rest Microservice!!!';
   }
 
 }

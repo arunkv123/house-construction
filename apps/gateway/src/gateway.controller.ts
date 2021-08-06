@@ -12,16 +12,16 @@ export class GatewayController {
     @Inject('HOUSE_CONSTRUCTION') private houseConstructionClient: ClientProxy) { }
 
   @Get(':name')
-  public async getHello(@Param('name') name: string): Promise<any> {
+  public async getRestMicroservice(@Param('name') name: string): Promise<any> {
     return this.userServiceClient
-      .send('test-message-pattern', name);
+      .send('rest-micro-service', name);
   }
 
   @Get('queue/:name')
-  public async getQueue(@Param('name') name: string): Promise<any> {
+  public async getQueueService(@Param('name') name: string): Promise<any> {
     var response: string;
     await this.houseConstructionClient
-      .send({ cmd: 'queue-message-pattern' }, name).forEach((data: string) => {
+      .send({ cmd: 'queue-micro-service' }, name).forEach((data: string) => {
         response = data;
       });
     return response;
