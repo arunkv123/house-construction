@@ -14,7 +14,21 @@ import { Transport, ClientsModule } from '@nestjs/microservices';
           port: 3002
         }
       }
-    ])],
+    ]),
+    ClientsModule.registerAsync([{
+      name: 'HOUSE_CONSTRUCTION',
+      useFactory: () => ({
+        transport: Transport.RMQ,
+        options: {
+          urls: ['amqp://full_access:s3crEt@192.168.18.19:5672/hello'],
+          queue: 'nestjs-microservices',
+          queueOptions: {
+            durable: true
+          },
+        }
+
+      })
+    }])],
   controllers: [GatewayController],
   providers: [GatewayService],
 })
